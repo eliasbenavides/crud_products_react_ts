@@ -68,10 +68,8 @@ export async function editProduct(data: ProductData, id: Product['id']) {
             id
         })
         if (result.success) {
-            const { data } = await axios.put(`${url}/api/products/${id}`, result.output)
-            console.log(data)
+            await axios.put(`${url}/api/products/${id}`, result.output)
         }
-        console.log(result)
     } catch (error) {
         console.log(error)
     }
